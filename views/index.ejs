@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>Here are all the things I need to do this week!</h1>
+    <form action="/addTask" method="POST">
+        <input type="text" placeholder="enter task here" name="task">
+        <button type="submit">Submit</button>
+    </form>
+    <ul class='tasks'>
+        <% for( let i = 0; i < tasks.length; i++ ) {%>
+            <li class="task">
+                <span><%= tasks[i].task %></span>
+                <span>complete</span>
+                <span class="del">delete</span>
+            </li>
+        <% } %>
+    </ul>   
+    <script src="main.js"></script>
+</body>
+</html>
